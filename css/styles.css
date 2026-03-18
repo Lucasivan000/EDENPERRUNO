@@ -130,9 +130,19 @@ header{
 }
 
 
+/* Solo para esta imagen */
+.imagen-ovalada {
+    max-width: 650px;      /* tamaño deseado */
+    width: 100%;           /* se adapta al contenedor */
+    border-radius: 50% / 35%;  /* forma de óvalo horizontal */
+    overflow: hidden;      /* evita que sobresalga la imagen */
+    display: flex;
+    justify-content: center;
+}
+
 /* CONTACTO Y REQUISITOS */
 .contacto{
-    align-items:stretch; /* 👈 CLAVE para que queden iguales */
+    align-items:stretch; /*  para que queden iguales */
 }
 
 /* CAJA GENERAL */
@@ -433,11 +443,7 @@ footer{
         padding: 20px;
     }
 
-    .navbar {
-        gap: 20px;
-        padding: 10px 0;
-    }
-}
+   
 
 /* MOBILE */
 @media (max-width: 768px) {
@@ -463,17 +469,40 @@ footer{
         padding: 15px;
     }
 
-    .navbar {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .navbar a {
-        font-size: 1rem;
-    }
 
     .btn-wp, .btn-ig {
         padding: 10px 18px;
         font-size: 0.9rem;
     }
+}
+
+/** navbar cool **/ 
+/* MEDIA QUERY PARA TABLET Y MOBILE */
+@media (max-width: 1024px) {
+
+    .navbar {
+        display: flex;
+        flex-direction: column;   /* apila los links */
+        gap: 15px;                /* espacio entre botones */
+        align-items: center;      /* centrado horizontal */
+    }
+
+    .navbar a {
+        font-size: 1rem;
+        text-align: center;
+        padding: 12px 25px;
+        width: 200px;             /* mismo ancho para todos */
+        background: linear-gradient(135deg, #2e7d32, #4caf50);
+        color: white;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .navbar a:hover {
+        transform: translateY(-2px) scale(1.03);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
 }
