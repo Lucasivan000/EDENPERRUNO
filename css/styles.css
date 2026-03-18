@@ -417,12 +417,12 @@ footer{
         gap: 30px;
     }
 
-    .hero h1 {
-        font-size: 2.2rem;
-    }
-
     .banner {
         height: 400px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
     }
 
     .imagen img {
@@ -444,14 +444,15 @@ footer{
     .section, .sectionEscuelitaClases {
         flex-direction: column;
         gap: 20px;
-    }
-
-    .hero h1 {
-        font-size: 1.8rem;
+        align-items: stretch; /* asegura que las cards llenen el ancho */
     }
 
     .banner {
         height: 300px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
     }
 
     .imagen img {
