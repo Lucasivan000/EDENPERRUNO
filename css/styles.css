@@ -138,6 +138,7 @@ header {
     /* tamaño deseado */
     width: 100%;
     /* se adapta al contenedor */
+    height: 650px;
     border-radius: 50% / 35%;
     /* forma de óvalo horizontal */
     overflow: hidden;
