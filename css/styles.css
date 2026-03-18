@@ -478,20 +478,19 @@ footer{
 
 /** navbar cool **/ 
 /* MEDIA QUERY PARA TABLET Y MOBILE */
-@media (max-width: 1024px) {
-
+@media (max-width: 768px) {
     .navbar {
         display: flex;
-        flex-direction: column;   /* apila los links */
-        gap: 15px;                /* espacio entre botones */
-        align-items: center;      /* centrado horizontal */
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
     }
 
     .navbar a {
         font-size: 1rem;
         text-align: center;
         padding: 12px 25px;
-        width: 200px;             /* mismo ancho para todos */
+        width: 200px;
         background: linear-gradient(135deg, #2e7d32, #4caf50);
         color: white;
         border-radius: 30px;
@@ -504,7 +503,6 @@ footer{
         transform: translateY(-2px) scale(1.03);
         box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     }
-
 }
 
 /* ADAPTACIÓN ESPECÍFICA PARA LA SECCIÓN ESCUELITA */
