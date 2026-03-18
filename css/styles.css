@@ -596,44 +596,25 @@ footer {
     }
 }
 
-/** banner **/
+/** banner mobile **/
 @media (max-width: 768px) {
 
     .banner {
         width: 100%;
-        height: 200px;
-        /* altura deseada */
+        height: 200px;        /* altura deseada */
         overflow: hidden;
         position: relative;
-        display: flex;
-        justify-content: center;
-        /* centra la imagen horizontalmente */
-        align-items: center;
-        /* centra la imagen verticalmente */
     }
 
     .banner img {
-        min-width: 100%;
-        /* asegura que cubra todo el ancho */
-        min-height: 100%;
-        /* asegura que cubra todo el alto */
-        object-fit: cover;
-        /* recorta sin deformar */
-        object-position: center;
-        /* centra el contenido principal */
+        width: 120%;          /* se pasa un poco para recortar laterales */
+        height: 100%;         /* ocupa toda la altura del contenedor */
+        object-fit: cover;    /* recorta sin deformar */
+        object-position: center; /* centra el contenido principal */
         display: block;
+        margin: 0 auto;       /* asegura que quede centrado horizontalmente */
     }
 
-    /* Texto del banner centrado */
-    .banner .texto-banner {
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        text-align: center;
-        color: white;
-        width: 90%;
-    }
 }
 
 /** navbar cool **/
