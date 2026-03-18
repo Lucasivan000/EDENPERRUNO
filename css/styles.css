@@ -427,9 +427,6 @@ footer{
         gap: 30px;
     }
 
-    .banner {
-        height: 300px;
-    }
 
     .hero h1 {
         font-size: 2.2rem;
@@ -459,10 +456,6 @@ footer{
         align-items: stretch; /* asegura que las cards llenen el ancho */
     }
 
-    .banner {
-        height: 200px;
-    }
-
     .hero h1 {
         font-size: 1.8rem;
     }
@@ -486,6 +479,39 @@ footer{
     }
     h2 {
         text-align: center;
+    }
+}
+
+/** banner **/ 
+/* =========================
+   BANNER MOBILE
+   ========================= */
+@media (max-width: 768px) {
+
+    .banner {
+        width: 100%;           /* ocupa todo el ancho */
+        height: 200px;         /* altura deseada */
+        overflow: hidden;      /* recorta lo que sobresale */
+        position: relative;
+    }
+
+    .banner img {
+        width: 110%;           /* aumenta un poco para recortar 10% laterales */
+        height: 100%;
+        object-fit: cover;     /* recorta sin deformar la imagen */
+        object-position: center; /* centra la imagen en vertical y horizontal */
+        display: block;
+    }
+
+    /* Si tenés texto dentro del banner */
+    .banner .texto-banner {
+        position: absolute;
+        bottom: 10px;          /* ajusta según convenga */
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        color: white;          /* o el color que uses */
+        width: 90%;            /* opcional, que no toque los bordes */
     }
 }
 
