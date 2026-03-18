@@ -655,44 +655,37 @@ footer {
 /* ADAPTACIÓN ESPECÍFICA PARA LA SECCIÓN ESCUELITA */
 @media (max-width: 768px) {
 
-    
     .sectionEscuelitaClases {
-        display: flex !important;
-        /* fuerza flex */
-        flex-direction: column !important;
-        /* apila elementos verticalmente */
+        display: flex !important;          /* fuerza flex */
+        flex-direction: column !important; /* apila elementos verticalmente */
         gap: 25px;
-        align-items: center;
-        /* centra horizontalmente */
-        padding: 20px 10px;
-        /* opcional, margen interno */
+        align-items: center;               /* centra horizontalmente */
+        padding: 20px 10px;                /* margen interno */
+        position: relative;                /* asegura que z-index funcione si es necesario */
     }
 
     /* Imagen primero */
     .sectionEscuelitaClases .imagen-ovalada {
-        order: 1;
-        /* imagen arriba */
+        order: 1;                          /* imagen arriba */
         width: 100%;
-        max-width: 500px;
-        /* tamaño máximo */
-        margin: 0 auto;
-        /* centrado horizontal */
+        max-width: 500px;                  /* tamaño máximo */
+        margin: 0 auto;                     /* centrado horizontal */
+        pointer-events: none;              /* deja pasar los clics al texto debajo */
     }
 
     /* Texto después de la imagen */
     .sectionEscuelitaClases .texto {
-        order: 2;
-        /* texto abajo */
-        width: 100%;
-        /* ocupa todo el ancho */
+        order: 2;                          /* texto abajo */
+        width: 100%;                        /* ocupa todo el ancho */
+        pointer-events: auto;               /* asegura que los enlaces sean clickeables */
+        z-index: 1;                         /* opcional, sobre cualquier pseudo-elemento decorativo */
     }
 
     /* Imagen dentro del contenedor */
     .sectionEscuelitaClases .imagen-ovalada img {
         width: 100%;
         height: auto;
-        border-radius: 50% / 35%;
-        /* mantiene óvalo */
+        border-radius: 50% / 35%;          /* mantiene óvalo */
         display: block;
     }
 }
