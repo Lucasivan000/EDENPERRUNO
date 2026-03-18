@@ -434,6 +434,53 @@ footer {
 
 /** MEDIA QUERIES PARA MOBILY TABLET **/
 /* TABLET */
+/*HERO*/
+@media (max-width: 768px) {
+
+    /* Selecciona solo los enlaces dentro de .hero-content */
+    .hero-content a {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 15px;
+        padding: 12px 22px;
+        background: linear-gradient(135deg, #25D366, #1ebe5d);
+        color: white;
+        border-radius: 40px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+
+        /* Animación de “respirar” */
+        animation: pulse 2s infinite alternate;
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        50% {
+            transform: scale(1.03);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        100% {
+            transform: scale(1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+    }
+
+    /* Hover opcional */
+    .hero-content a:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+}
+
 @media (max-width: 1024px) {
 
     .section,
@@ -441,55 +488,6 @@ footer {
         flex-direction: column;
         gap: 30px;
     }
-
-    /*HERO*/
-    @media (max-width: 768px) {
-
-        /* Selecciona solo los enlaces dentro de .hero-content */
-        .hero-content a {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 15px;
-            padding: 12px 22px;
-            background: linear-gradient(135deg, #25D366, #1ebe5d);
-            color: white;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-            transition: all 0.3s ease;
-
-            /* Animación de “respirar” */
-            animation: pulse 2s infinite alternate;
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-            }
-
-            50% {
-                transform: scale(1.03);
-                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-            }
-
-            100% {
-                transform: scale(1);
-                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-            }
-        }
-
-        /* Hover opcional */
-        .hero-content a:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-        }
-    }
-
-
 
     .hero h1 {
         font-size: 2.2rem;
@@ -531,7 +529,7 @@ footer {
         text-decoration: none;
         font-weight: 600;
         font-size: 1rem;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
         transition: all 0.3s ease;
 
         /* Animación de “respirar” */
@@ -541,22 +539,24 @@ footer {
     @keyframes pulse {
         0% {
             transform: scale(1);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
         }
+
         50% {
             transform: scale(1.03);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
+
         100% {
             transform: scale(1);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
         }
     }
 
     /* Hover opcional */
     .hero-content a:hover {
         transform: scale(1.05);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
     }
 }
 
@@ -569,7 +569,7 @@ footer {
         align-items: stretch;
         /* asegura que las cards llenen el ancho */
     }
-    
+
     .hero h1 {
         font-size: 1.8rem;
     }
@@ -606,9 +606,9 @@ footer {
 
     .banner {
         width: 100%;
-        height: 200px;           
+        height: 200px;
         overflow: hidden;
-        position: relative;     
+        position: relative;
     }
 
     /* Usamos la versión recortada específicamente para mobile */
@@ -616,8 +616,10 @@ footer {
         content: url('../assets/bannermobile.png');
         width: 100%;
         height: 100%;
-        object-fit: cover;       /* recorta sin deformar */
-        object-position: center; /* centra la parte importante */
+        object-fit: cover;
+        /* recorta sin deformar */
+        object-position: center;
+        /* centra la parte importante */
         display: block;
     }
 
@@ -657,7 +659,7 @@ footer {
 /* ADAPTACIÓN ESPECÍFICA PARA LA SECCIÓN ESCUELITA */
 @media (max-width: 768px) {
 
-    
+
     .sectionEscuelitaClases {
         display: flex !important;
         /* fuerza flex */
@@ -749,5 +751,29 @@ footer {
     .btn-ig:hover {
         transform: translateY(-3px) scale(1.1);
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    }
+}
+
+/** arreglo de bug **/
+/* =========================
+   SOLUCIÓN LINK ESCUELITA MOBILE
+   ========================= */
+@media (max-width: 768px) {
+
+    /* Permitir que los enlaces dentro de la sección sean clickeables */
+    .sectionEscuelitaClases {
+        overflow: visible !important; /* permite click en enlaces */
+    }
+
+    /* Aseguramos que el texto (donde está el enlace) esté por encima de los fondos decorativos */
+    .sectionEscuelitaClases .texto {
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Los pseudo-elementos de fondo no bloquean clicks */
+    .sectionEscuelitaClases.fondoDecorado::before,
+    .sectionEscuelitaClases.fondoDecorado::after {
+        z-index: 0; /* detrás del contenido */
     }
 }
