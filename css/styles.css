@@ -783,3 +783,16 @@ footer {
         pointer-events: none; /* ⚡ clave: no bloquean clicks */
     }
 }
+
+/* =========================
+   EVITAR SCROLL HORIZONTAL EN MOBILE
+   ========================= */
+body {
+    overflow-x: hidden;
+}
+
+.sectionEscuelitaClases.fondoDecorado::before,
+.sectionEscuelitaClases.fondoDecorado::after {
+    max-width: 100vw;
+    max-height: 100vh;
+}
