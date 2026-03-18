@@ -442,6 +442,12 @@ footer{
     .box {
         padding: 20px;
     }
+    .mini {
+        text-align: center;
+    }
+    h2 {
+        text-align: center;
+    }
 
 }   
 
@@ -473,6 +479,13 @@ footer{
     .btn-wp, .btn-ig {
         padding: 10px 18px;
         font-size: 0.9rem;
+    }
+
+     .mini {
+        text-align: center;
+    }
+    h2 {
+        text-align: center;
     }
 }
 
