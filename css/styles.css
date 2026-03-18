@@ -514,17 +514,9 @@ footer {
 }
 
 /* MOBILE */
-@media (max-width: 768px) {
 
-    .section,
-    .sectionEscuelitaClases {
-        flex-direction: column;
-        gap: 20px;
-        align-items: stretch;
-        /* asegura que las cards llenen el ancho */
-    }
-    /* hero */
-    @media (max-width: 768px) {
+/* hero */
+@media (max-width: 768px) {
 
     /* Selecciona solo los enlaces dentro de .hero-content */
     .hero-content a {
@@ -568,6 +560,16 @@ footer {
     }
 }
 
+@media (max-width: 768px) {
+
+    .section,
+    .sectionEscuelitaClases {
+        flex-direction: column;
+        gap: 20px;
+        align-items: stretch;
+        /* asegura que las cards llenen el ancho */
+    }
+    
     .hero h1 {
         font-size: 1.8rem;
     }
