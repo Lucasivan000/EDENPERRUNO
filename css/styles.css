@@ -758,22 +758,28 @@ footer {
 /* =========================
    SOLUCIÓN LINK ESCUELITA MOBILE
    ========================= */
+/* =========================
+   LINK ESCUELITA MOBILE - CORRECCIÓN DEFINITIVA
+   ========================= */
 @media (max-width: 768px) {
 
-    /* Permitir que los enlaces dentro de la sección sean clickeables */
+    /* La sección debe permitir clicks y que el contenido esté arriba */
     .sectionEscuelitaClases {
-        overflow: visible !important; /* permite click en enlaces */
+        overflow: visible !important; /* elimina el recorte */
+        position: relative;           /* para controlar z-index interno */
     }
 
-    /* Aseguramos que el texto (donde está el enlace) esté por encima de los fondos decorativos */
+    /* Texto por encima de los fondos decorativos */
     .sectionEscuelitaClases .texto {
         position: relative;
-        z-index: 2;
+        z-index: 2; /* asegura que los enlaces sean clickeables */
     }
 
-    /* Los pseudo-elementos de fondo no bloquean clicks */
+    /* Los pseudo-elementos de fondo detrás */
     .sectionEscuelitaClases.fondoDecorado::before,
     .sectionEscuelitaClases.fondoDecorado::after {
-        z-index: 0; /* detrás del contenido */
+        position: absolute;
+        z-index: 0; /* fondo detrás de todo */
+        pointer-events: none; /* ⚡ clave: no bloquean clicks */
     }
 }
