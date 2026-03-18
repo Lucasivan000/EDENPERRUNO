@@ -556,26 +556,40 @@ footer{
 }
 
 /* SOLO PARA MOBILE */
+/* =========================
+   BOTONES WP & IG SOLO ICONO - MOBILE
+   ========================= */
 @media (max-width: 768px) {
 
-    /* Ajusta ancho del botón para que quede cuadrado solo con el ícono */
-    .lista-contacto a {
-        width: 50px;           /* ancho cuadrado */
-        padding: 10px;         /* espacio alrededor del ícono */
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    /* Centrar la lista de botones en la misma fila */
+    .lista-contacto {
+        display: flex;           /* fila */
+        justify-content: center; /* centra horizontalmente */
+        gap: 15px;               /* separación entre iconos */
+        padding: 10px 0;
     }
 
-    /* Oculta solo el texto dentro del botón, mantiene el <i> visible */
-    .lista-contacto a span,
-    .lista-contacto a .btn-text {
-        display: none;
+    /* Ajustar botones para que solo se vea el ícono */
+    .btn-wp, .btn-ig {
+        padding: 10px;           /* ajusta tamaño */
+        width: 50px;             /* cuadrado fijo */
+        height: 50px;            /* cuadrado fijo */
+        border-radius: 50%;      /* círculo */
+        font-size: 0;            /* oculta el texto */
+        gap: 0;                  /* elimina espacio entre icono y texto */
+        justify-content: center; 
     }
 
-    /* Mantiene visible el ícono */
-    .lista-contacto a i {
-        font-size: 20px;       /* tamaño del ícono */
-        color: inherit;        /* mantiene el color del botón */
+    /* Mantener ícono visible */
+    .btn-wp i, .btn-ig i {
+        font-size: 24px;         /* tamaño del ícono */
+        font-weight: normal;
+        color: white;            /* mantiene color legible */
+    }
+
+    /* Hover cool */
+    .btn-wp:hover, .btn-ig:hover {
+        transform: translateY(-3px) scale(1.1);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.25);
     }
 }
