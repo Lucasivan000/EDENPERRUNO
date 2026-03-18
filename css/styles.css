@@ -407,3 +407,72 @@ footer{
     display: flex;      /* pone los items en fila */
     gap: 10px;          /* opcional, espacio entre botones */
 }
+
+
+/** MEDIA QUERIES PARA MOBILY TABLET **/
+/* TABLET */
+@media (max-width: 1024px) {
+    .section, .sectionEscuelitaClases {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .banner {
+        height: 400px;
+    }
+
+    .imagen img {
+        max-width: 100%;
+    }
+
+    .box {
+        padding: 20px;
+    }
+
+    .navbar {
+        gap: 20px;
+        padding: 10px 0;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .section, .sectionEscuelitaClases {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .banner {
+        height: 300px;
+    }
+
+    .imagen img {
+        max-width: 90%;
+    }
+
+    .box {
+        padding: 15px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar a {
+        font-size: 1rem;
+    }
+
+    .btn-wp, .btn-ig {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+}
