@@ -1,0 +1,409 @@
+:root{
+    --verde:#2e7d32;
+    --verde-claro:#4caf50;
+    --fondo:#f6f3ee;
+}
+
+/* HEADER GENERAL */
+header{
+    width:100%;
+}
+
+/* BANNER (LOGO GRANDE) */
+.banner{
+    width:100%;
+    height:600px;
+    overflow:hidden;
+}
+
+.banner img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* NAVBAR */
+.navbar{
+    background:var(--verde);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
+    padding:15px 0;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* BOTONES */
+.navbar a{
+    color:white;
+    font-size:1.1rem;
+    font-weight:600;
+    text-decoration:none;
+    position:relative;
+    transition:0.3s;
+}
+
+/* EFECTO HOVER PRO */
+.navbar a::after{
+    content:\"\"; 
+    position:absolute;
+    width:0%;
+    height:2px;
+    background:white;
+    left:0;
+    bottom:-5px;
+    transition:0.3s;
+}
+
+.navbar a:hover::after{
+    width:100%;
+}
+
+.navbar a:hover{
+    transform:scale(1.1);
+}
+
+/* HERO */
+
+.hero{
+    height:40vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(135deg, #f6f3ee, #e8f5e9);
+}
+
+/* CONTENIDO */
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.hero h1{
+    font-size:3rem;
+    color:var(--verde);
+    margin-bottom:10px;
+}
+
+
+/* SECTION EESCUELA */ 
+.sectionEscuelitaClases{
+    padding:80px 10%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+    position:relative;   /* 👈 CLAVE */
+    overflow:hidden;     /* 👈 CLAVE */
+    background:linear-gradient(135deg, #f6f3ee, #e8f5e9);
+}
+
+.fondoDecorado::before{
+    content:"";
+    position:absolute;
+    top:-150px;
+    right:-150px;
+    width: 500px;
+    height:500px;
+    background:var(--verde-claro);
+    border-radius:50%;
+    
+    opacity:0.4;
+    filter: blur(80px);
+}
+
+.fondoDecorado::after{
+    content:"";
+    position:absolute;
+    bottom:-100px;
+    left:-100px;
+    width:500px;
+    height:500px;
+    background:var(--verde);
+    border-radius:50%;
+    
+    opacity:0.3;
+    filter: blur(80px);
+}
+
+
+/* CONTACTO Y REQUISITOS */
+.contacto{
+    align-items:stretch; /* 👈 CLAVE para que queden iguales */
+}
+
+/* CAJA GENERAL */
+.box{
+    flex:1;
+    background:linear-gradient(135deg, #f6f3ee, #e8f5e9);
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+/* efecto hover (MUY PRO) */
+.box:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 35px rgba(0,0,0,0.12);
+}
+
+/* TITULOS */
+.box h3{
+    color:var(--verde);
+    margin-bottom:15px;
+    
+}
+h2{
+    font-size:2.5rem;
+    font-weight:600;
+    color:var(--verde);
+}
+/** FORZAR QUEE LA SECTION CONTACTO TENGA MISMO TAMAÑO DE CARDS**/
+
+/* Solo para la sección contacto */
+.section.contacto {
+    align-items: stretch;   /* ahora los hijos (.box) se estiran y quedan igual altura */
+}
+
+
+/* ESTILO DE LETRA GENERAL */ 
+body{
+    font-family:'Source Sans 3', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    color:#333;
+}
+
+/* TÍTULOS */
+h1{
+    font-size:3rem;
+    font-weight:700;
+}
+
+
+
+h3{
+    font-size:1.2rem;
+    font-weight:600;
+}
+
+/* TEXTO */
+p{
+    font-size:1rem;
+    font-weight:400;
+}
+
+/*   */
+
+
+/* LISTAS */
+.box ul li{
+    margin-bottom:10px;
+}
+
+/* TEXTOS */
+.destacado{
+    font-size:1.1rem;
+    margin-bottom:15px;
+}
+
+.nota{
+    margin-top:15px;
+    opacity:0.8;
+}
+
+.mini{
+    margin-top:15px;
+    font-size:0.85rem;
+    opacity:0.7;
+}
+
+
+
+
+
+/* DECORACION MODERNA */
+.decoracion{
+    position:absolute;
+    width:400px;
+    height:400px;
+    background:var(--verde-claro);
+    border-radius:50%;
+    top:-100px;
+    right:-100px;
+    opacity:0.2;
+}
+
+/* SEGUNDA FORMA */
+.hero::before{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    background:var(--verde);
+    bottom:-100px;
+    left:-100px;
+    border-radius:50%;
+    opacity:0.1;
+}
+
+.section{
+    padding:80px 10%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+}
+
+.section:nth-child(even){
+    flex-direction:row-reverse;
+}
+
+.texto{
+    flex:1;
+}
+
+
+
+.imagen{
+    flex:1;
+    display:flex;
+    justify-content:center;
+}
+
+.imagen img{
+    width:100%;
+    max-width:500px;
+    border-radius:30px;
+    clip-path:polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+}
+
+.circulo img{
+    border-radius:50%;
+    clip-path:none;
+}
+
+.triangulo img{
+    clip-path:polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.pasos div{
+    background:white;
+    padding:10px;
+    margin-top:10px;
+    border-left:5px solid var(--verde);
+}
+
+footer{
+    background:#333;
+    color:white;
+    text-align:center;
+    padding:30px;
+    margin-top:50px;
+}
+
+
+/* BOTON DE WP */ 
+.btn-wp{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    margin-top:15px;
+    padding:12px 22px;
+
+    background:linear-gradient(135deg, #25D366, #1ebe5d);
+    color:white;
+
+    border-radius:40px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:1rem;
+
+    box-shadow:0 6px 20px rgba(0,0,0,0.15);
+    transition:all 0.3s ease;
+}
+
+/* icono */
+.btn-wp i{
+    font-size:20px;
+}
+
+/* hover */
+.btn-wp:hover{
+    transform:translateY(-3px) scale(1.03);
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* click */
+.btn-wp:active{
+    transform:scale(0.97);
+}
+
+/* ENLACE INTERNO */
+.btn-link{
+    color:var(--verde);
+    font-weight:600;
+    text-decoration:none;
+    position:relative;
+}
+
+.btn-link::after{
+    content:"";
+    position:absolute;
+    width:0%;
+    height:2px;
+    bottom:-3px;
+    left:0;
+    background:var(--verde);
+    transition:0.3s;
+}
+
+.btn-link:hover::after{
+    width:100%;
+}
+
+/* ENLACE INSTAGRAM */
+.btn-ig{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    margin-top:15px;
+    padding:12px 22px;
+
+    background:linear-gradient(135deg, #E1306C, #C13584, #833AB4);
+    color:white;
+
+    border-radius:40px;
+    text-decoration:none;
+    font-weight:600;
+
+    box-shadow:0 6px 20px rgba(0,0,0,0.15);
+    transition:all 0.3s ease;
+}
+
+.btn-ig i{
+    font-size:20px;
+}
+
+.btn-ig:hover{
+    transform:translateY(-3px) scale(1.03);
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.btn-ig:active{
+    transform:scale(0.97);
+}
+
+.lista-contacto {
+    list-style: none;   /* quita los puntos */
+    padding: 0;
+    margin: 0;
+    display: flex;      /* pone los items en fila */
+    gap: 10px;          /* opcional, espacio entre botones */
+}
