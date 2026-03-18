@@ -506,3 +506,35 @@ footer{
     }
 
 }
+
+ /* ADAPTACIÓN ESPECÍFICA PARA LA SECCIÓN ESCUELITA */
+@media (max-width: 768px) {
+
+    /* Apilar correctamente y separar imagen y texto */
+    .sectionEscuelitaClases {
+        flex-direction: column;
+        gap: 25px;
+        align-items: stretch; /* el texto ocupa todo el ancho */
+        padding: 20px 10px;   /* opcional, para que no quede pegado al borde */
+    }
+
+    /* Texto ocupa todo el ancho */
+    .sectionEscuelitaClases .texto {
+        width: 100%;
+    }
+
+    /* Imagen adaptada para que se vea como bloque separado */
+    .sectionEscuelitaClases .imagen-ovalada {
+        width: 100%;           /* ocupa todo el ancho disponible */
+        max-width: 500px;      /* tamaño máximo */
+        margin: 0 auto;        /* centrado */
+    }
+
+    /* Imagen dentro del contenedor */
+    .sectionEscuelitaClases .imagen-ovalada img {
+        width: 100%;
+        height: auto;
+        border-radius: 50% / 35%; /* mantiene el óvalo */
+        display: block;
+    }
+}
