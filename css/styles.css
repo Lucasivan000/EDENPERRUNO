@@ -484,6 +484,7 @@ footer{
         flex-direction: column;
         gap: 15px;
         align-items: center;
+        background-color: linear-gradient(135deg, #f6f3ee, #e8f5e9);
     }
 
     .navbar a {
@@ -497,7 +498,7 @@ footer{
         text-decoration: none;
         font-weight: 600;
         transition: all 0.3s ease;
-        background-color: linear-gradient(135deg, #f6f3ee, #e8f5e9);
+        
     }
 
     .navbar a:hover {
@@ -541,31 +542,27 @@ footer{
     }
 }
 
-/** ocultar iconos de contacto WP IG para mobile */
 /* SOLO PARA MOBILE */
 @media (max-width: 768px) {
 
-    /* Oculta el texto de los botones pero mantiene el icono */
+    /* Ajusta ancho del botón para que quede cuadrado solo con el ícono */
     .lista-contacto a {
-        width: 50px;       /* ancho cuadrado solo para el ícono */
-        padding: 10px;     /* ajusta espacio alrededor del icono */
-        justify-content: center; /* centra el icono */
+        width: 50px;           /* ancho cuadrado */
+        padding: 10px;         /* espacio alrededor del ícono */
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    /* Oculta todo el texto dentro del enlace excepto el <i> */
+    /* Oculta solo el texto dentro del botón, mantiene el <i> visible */
     .lista-contacto a span,
-    .lista-contacto a .btn-text,
-    .lista-contacto a:not(i) {
+    .lista-contacto a .btn-text {
         display: none;
     }
-    
-    /* Si tu HTML no tiene span, podemos ocultar los nodos de texto */
-    .lista-contacto a {
-        font-size: 0;      /* oculta el texto */
-    }
 
+    /* Mantiene visible el ícono */
     .lista-contacto a i {
-        font-size: 20px;   /* mantiene el tamaño del ícono */
-        font-weight: normal;
+        font-size: 20px;       /* tamaño del ícono */
+        color: inherit;        /* mantiene el color del botón */
     }
 }
