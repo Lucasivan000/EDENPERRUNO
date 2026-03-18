@@ -539,3 +539,32 @@ footer{
         display: block;
     }
 }
+
+/** ocultar iconos de contacto WP IG para mobile */
+/* SOLO PARA MOBILE */
+@media (max-width: 768px) {
+
+    /* Oculta el texto de los botones pero mantiene el icono */
+    .lista-contacto a {
+        width: 50px;       /* ancho cuadrado solo para el ícono */
+        padding: 10px;     /* ajusta espacio alrededor del icono */
+        justify-content: center; /* centra el icono */
+    }
+
+    /* Oculta todo el texto dentro del enlace excepto el <i> */
+    .lista-contacto a span,
+    .lista-contacto a .btn-text,
+    .lista-contacto a:not(i) {
+        display: none;
+    }
+    
+    /* Si tu HTML no tiene span, podemos ocultar los nodos de texto */
+    .lista-contacto a {
+        font-size: 0;      /* oculta el texto */
+    }
+
+    .lista-contacto a i {
+        font-size: 20px;   /* mantiene el tamaño del ícono */
+        font-weight: normal;
+    }
+}
