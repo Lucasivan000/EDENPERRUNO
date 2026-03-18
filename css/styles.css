@@ -784,44 +784,44 @@ footer {
     }
 }
 
+
 /* =========================
-   EVITAR SCROLL HORIZONTAL EN MOBILE
-   ========================= */
-/* =========================
-   FONDO DECORADO MOBILE - EVITAR SCROLL
-   ========================= */
-/* =========================
-   EVITAR SCROLL HORIZONTAL SOLO EN MOBILE
+   EVITAR SCROLL HORIZONTAL - MOBILE
    ========================= */
 @media (max-width: 768px) {
+
     body {
-        overflow-x: hidden; /* evita scroll horizontal global */
+        overflow-x: hidden;
     }
 
-    /* Aseguramos que las secciones con fondo decorado no sobresalgan */
-    .sectionEscuelitaClases.fondoDecorado {
-        overflow: hidden;
+    /* Sección escuelita y clases */
+    .sectionEscuelitaClases {
+        padding: 20px 10px !important; /* quitar padding % grande */
+        flex-direction: column !important;
+        align-items: center;
+        gap: 20px;
+        width: 100vw; /* asegurar que no pase el ancho del viewport */
+        box-sizing: border-box;
+        overflow: hidden; /* bloquea contenido que sobresalga */
     }
 
-    /* Ajustamos los pseudo-elementos decorativos */
+    /* Imagen ovalada */
+    .sectionEscuelitaClases .imagen-ovalada,
+    .sectionEscuelitaClases .imagen {
+        max-width: 100%; /* que no exceda el contenedor */
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    /* Pseudo-elementos decorativos */
     .sectionEscuelitaClases.fondoDecorado::before,
-    .sectionEscuelitaClases.fondoDecorado::after {
-        max-width: 100vw;
-        max-height: 100vh;
-    }
-
-    /* Opcional: reducimos tamaño y posición para que no sobresalga */
-    .sectionEscuelitaClases.fondoDecorado::before {
-        width: 250px;
-        height: 250px;
-        top: -60px;
-        right: -60px;
-    }
-
     .sectionEscuelitaClases.fondoDecorado::after {
         width: 200px;
         height: 200px;
-        bottom: -40px;
-        left: -40px;
+        top: -50px;
+        right: -50px;
+        bottom: -50px;
+        left: -50px;
     }
 }
