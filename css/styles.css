@@ -4,7 +4,8 @@
     --fondo: #f6f3ee;
 }
 
-html, body {
+html,
+body {
     overflow-x: hidden;
 }
 
@@ -35,6 +36,10 @@ header {
     gap: 40px;
     padding: 15px 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.menu-text {
+    display: none;
 }
 
 /* BOTONES */
@@ -105,7 +110,7 @@ header {
     color: var(--verde);
     margin-bottom: 10px;
     text-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
-     font-weight: 700;
+    font-weight: 700;
 }
 
 
@@ -249,38 +254,46 @@ p {
 }
 
 .texto {
-    flex: 1 1 500px; /* Ocupa espacio flexible pero no demasiado pequeño */
+    flex: 1 1 500px;
+    /* Ocupa espacio flexible pero no demasiado pequeño */
 }
 
 .texto h2.tituloSection {
-    font-size: clamp(2rem, 4vw, 3rem); /* grande y adaptable */
+    font-size: clamp(2rem, 4vw, 3rem);
+    /* grande y adaptable */
     font-weight: 700;
     margin-bottom: 20px;
-    text-align: center; /* centrado solo si querés */
-    color: #2a2a2a; /* un gris oscuro legible */
+    text-align: center;
+    /* centrado solo si querés */
+    color: #2a2a2a;
+    /* un gris oscuro legible */
 }
 
 .texto p {
     font-size: clamp(1rem, 2vw, 1.2rem);
     line-height: 1.6;
     margin-bottom: 20px;
-    color: #444; /* contraste suave con el título */
+    color: #444;
+    /* contraste suave con el título */
     text-align: left;
 }
 
 /* imagen primera seccion */
 
 .imagen {
-    flex: 1 1 400px; /* Ocupa espacio flexible */
+    flex: 1 1 400px;
+    /* Ocupa espacio flexible */
     display: flex;
     justify-content: center;
 }
 
 .imagen img {
     width: 100%;
-    max-width: 450px; /* Evita que crezca demasiado */
+    max-width: 450px;
+    /* Evita que crezca demasiado */
     height: auto;
-    border-radius: 15px; /* opcional: suaviza la imagen */
+    border-radius: 15px;
+    /* opcional: suaviza la imagen */
     object-fit: cover;
 }
 
@@ -292,8 +305,11 @@ p {
         gap: 30px;
     }
 
-    .texto, .imagen {
-        text-align: center; /* centrar contenido en móvil */
+    .texto,
+    .imagen {
+        text-align: center;
+        
+        
     }
 
     .texto h2.tituloSection {
@@ -306,6 +322,9 @@ p {
 
     .imagen img {
         max-width: 100%;
+        width: 100%;
+        height: auto;          
+        object-fit: contain;
     }
 }
 
@@ -333,7 +352,7 @@ footer {
     align-items: center;
     gap: 10px;
 
-    
+
     padding: 12px 26px;
 
     background: linear-gradient(135deg, #25d366, #1fae58);
@@ -351,7 +370,7 @@ footer {
 
 /* Icono */
 .btn-wp i {
-    font-size: 18px;
+    font-size: 40px;
 }
 
 /* Hover suave */
@@ -395,7 +414,7 @@ footer {
     align-items: center;
     gap: 10px;
 
-    
+
     padding: 12px 22px;
 
     background: linear-gradient(135deg, #E1306C, #C13584, #833AB4);
@@ -410,7 +429,7 @@ footer {
 }
 
 .btn-ig i {
-    font-size: 20px;
+    font-size: 40px;
 }
 
 .btn-ig:hover {
@@ -428,18 +447,23 @@ footer {
     margin: 15px 0 0 0;
 
     display: flex;
-    align-items: center;      /* 🔥 MISMA ALTURA VISUAL */
-    justify-content: center;  /* opcional, queda más prolijo */
+    align-items: center;
+    /* 🔥 MISMA ALTURA VISUAL */
+    justify-content: center;
+    /* opcional, queda más prolijo */
     gap: 15px;
 }
+
 .lista-contacto a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    min-height: 52px;   /* 🔥 misma altura */
+    min-height: 52px;
+    /* 🔥 misma altura */
     padding: 12px 22px;
-    line-height: 1;     /* evita desfases de texto */
+    line-height: 1;
+    /* evita desfases de texto */
 }
 
 
@@ -448,8 +472,9 @@ footer {
 .servicios {
     display: block;
     padding: 80px 10%;
-    
+
 }
+
 .servicios-contenido {
     margin-top: 40px;
 }
@@ -474,7 +499,7 @@ footer {
 
 .servicio:hover {
     transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
 }
 
 /* IMAGEN */
@@ -499,13 +524,18 @@ footer {
 
 .servicio-info h3 {
     color: var(--verde);
-    font-size: 2.2rem;      /* más grande que el texto */
-    font-weight: 700;       /* más marcado */
+    font-size: 2.2rem;
+    /* más grande que el texto */
+    font-weight: 700;
+    /* más marcado */
     margin-bottom: 12px;
-    text-transform: capitalize;  /* hace que la primera letra de cada palabra sea mayúscula */
-    letter-spacing: 1px;        /* un poco de espacio entre letras */
+    text-transform: capitalize;
+    /* hace que la primera letra de cada palabra sea mayúscula */
+    letter-spacing: 1px;
+    /* un poco de espacio entre letras */
     line-height: 1.3;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* sutil sombra para darle “profundidad” */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    /* sutil sombra para darle “profundidad” */
 }
 
 .servicio-info p {
@@ -520,8 +550,8 @@ footer {
     font-weight: 600;
 }
 
-.tituloSectionProceso{
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+.tituloSectionProceso {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     font-size: 3rem;
 
 }
@@ -532,9 +562,12 @@ footer {
     text-align: center;
 
     display: flex;
-    flex-direction: column; /* ahora todo se apila verticalmente */
-    align-items: center;    /* centra el h2 y las cards */
-    gap: 40px;              /* espacio entre h2 y cards */
+    flex-direction: column;
+    /* ahora todo se apila verticalmente */
+    align-items: center;
+    /* centra el h2 y las cards */
+    gap: 40px;
+    /* espacio entre h2 y cards */
 }
 
 .icono-card img {
@@ -542,16 +575,18 @@ footer {
     height: 80px;
 }
 
-.contenido-card h3{
+.contenido-card h3 {
     font-size: 2.0rem;
 }
-.contenido-card p{
+
+.contenido-card p {
     font-size: 1.2rem;
 }
 
 .paso {
     font-weight: 700;
-    color: #4a90e2; /* color destacado */
+    color: #4a90e2;
+    /* color destacado */
     margin-bottom: 10px;
     display: block;
 }
@@ -560,9 +595,12 @@ footer {
     display: flex;
     gap: 30px;
     justify-content: center;
-    align-items: stretch; /* estira todas las cards al mismo alto */
-    width: 100%; /* ocupa todo el ancho disponible */
-    max-width: 1024px; /* opcional, para no exceder la pantalla */
+    align-items: stretch;
+    /* estira todas las cards al mismo alto */
+    width: 100%;
+    /* ocupa todo el ancho disponible */
+    max-width: 1024px;
+    /* opcional, para no exceder la pantalla */
 }
 
 .card-proceso {
@@ -570,12 +608,14 @@ footer {
     padding: 25px 20px;
     border-radius: 22px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    flex: 1; /* todas ocupan el mismo ancho disponible */
+    flex: 1;
+    /* todas ocupan el mismo ancho disponible */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    max-width: 320px; /* evita que crezcan demasiado */
+    max-width: 320px;
+    /* evita que crezcan demasiado */
 }
 
 
@@ -595,7 +635,8 @@ footer {
     }
 
     .servicio {
-        flex-direction: column; /* imagen arriba, texto abajo */
+        flex-direction: column;
+        /* imagen arriba, texto abajo */
         gap: 0;
     }
 
@@ -674,6 +715,7 @@ footer {
         font-size: 0.95rem;
     }
 }
+
 /* =========================
    SECCIÓN LISTA DE PRECIOS
    ========================= */
@@ -747,15 +789,18 @@ footer {
 
     .precios-card {
         padding: 30px 20px;
-        overflow: hidden; /* seguridad extra */
+        overflow: hidden;
+        /* seguridad extra */
     }
 
     .btn-precios {
         width: 100%;
         max-width: 100%;
-        box-sizing: border-box; /* CLAVE */
+        box-sizing: border-box;
+        /* CLAVE */
         justify-content: center;
-        padding: 14px 20px; /* reducimos laterales */
+        padding: 14px 20px;
+        /* reducimos laterales */
     }
 
 }
@@ -769,17 +814,24 @@ footer {
     }
 
     .lista-proceso {
-        flex-direction: column; /* cards apiladas */
-        align-items: center;    /* centradas */
-        gap: 25px;              /* espacio entre cards */
+        flex-direction: column;
+        /* cards apiladas */
+        align-items: center;
+        /* centradas */
+        gap: 25px;
+        /* espacio entre cards */
         width: 100%;
     }
 
     .card-proceso {
-        max-width: 500px;       /* ancho máximo razonable */
-        width: 100%;            /* ocupa todo el ancho del contenedor */
-        padding: 20px 15px;     /* más compacto en móvil */
-        text-align: center;     /* centra el contenido */
+        max-width: 500px;
+        /* ancho máximo razonable */
+        width: 100%;
+        /* ocupa todo el ancho del contenedor */
+        padding: 20px 15px;
+        /* más compacto en móvil */
+        text-align: center;
+        /* centra el contenido */
     }
 
     .card-proceso h3 {
@@ -878,6 +930,7 @@ footer {
     }
 
 }
+
 /* hero */
 @media (max-width: 768px) {
 
@@ -989,6 +1042,7 @@ footer {
     }
 
 }
+
 /*NAVBAR*/
 @media (max-width: 768px) {
 
@@ -1015,7 +1069,8 @@ footer {
         border: none;
         cursor: pointer;
         padding: 10px;
-        z-index: 1001; /* SIEMPRE visible */
+        z-index: 1001;
+        /* SIEMPRE visible */
     }
 
     .menu-toggle span {
@@ -1027,9 +1082,11 @@ footer {
 
     /* TEXTO MENU */
     .menu-text {
+        display: block;
         font-size: 1rem;
         font-weight: 600;
         color: #1fbd19;
+
     }
 
     /* MENU CERRADO */
@@ -1088,7 +1145,8 @@ footer {
     .lista-contacto {
         display: flex;
         justify-content: center;
-        align-items: center; /* MISMA ALTURA */
+        align-items: center;
+        /* MISMA ALTURA */
         gap: 15px;
         padding: 12px 0;
     }
@@ -1099,24 +1157,53 @@ footer {
         width: 50px;
         height: 50px;
         padding: 0;
-        margin: 0;              /* CLAVE */
+        margin: 0;
+        /* CLAVE */
         border-radius: 50%;
 
-        display: flex;          /* CLAVE */
-        align-items: center;    /* CLAVE */
+        display: flex;
+        /* CLAVE */
+        align-items: center;
+        /* CLAVE */
         justify-content: center;
 
-        line-height: 1;         /* CLAVE */
+        line-height: 1;
+        /* CLAVE */
         font-size: 0;
-        vertical-align: middle;/* EXTRA SEGURIDAD */
+        vertical-align: middle;
+        /* EXTRA SEGURIDAD */
     }
 
     /* ICONOS */
-    .btn-mob-change i,
-    .btn-ig i {
-        font-size: 24px;
-        line-height: 1;         /* CLAVE */
-        display: block;         /* evita baseline raro */
+    @media (max-width: 768px) {
+
+        /* ocultar texto del botón */
+        .btn-ig span,
+        .btn-ig .texto-btn,
+        .btn-mob-change span,
+        .btn-mob-change .texto-btn {
+            display: none;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .btn-ig,
+        .btn-mob-change {
+            width: 50px;
+            height: 50px;
+            padding: 0;
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-ig i
+        .btn-mob-change i {
+            font-size: 28px;
+            line-height: 1;
+        }
     }
 
     /* FEEDBACK TÁCTIL */
