@@ -45,7 +45,7 @@ header {
 
 /* EFECTO HOVER PRO */
 .navbar a::after {
-    content: \"\";
+    content: "";
     position: absolute;
     width: 0%;
     height: 2px;
@@ -61,6 +61,16 @@ header {
 
 .navbar a:hover {
     transform: scale(1.1);
+}
+
+/* 🔴 OCULTAR ELEMENTOS MOBILE EN DESKTOP */
+.menu-toggle {
+    display: none;
+}
+
+.menu-links {
+    display: flex;
+    gap: 40px;
 }
 
 /* HERO */
@@ -242,7 +252,7 @@ p {
     font-size: clamp(2rem, 4vw, 3rem); /* grande y adaptable */
     font-weight: 700;
     margin-bottom: 20px;
-    text-align: left; /* centrado solo si querés */
+    text-align: center; /* centrado solo si querés */
     color: #2a2a2a; /* un gris oscuro legible */
 }
 
@@ -251,6 +261,7 @@ p {
     line-height: 1.6;
     margin-bottom: 20px;
     color: #444; /* contraste suave con el título */
+    text-align: left;
 }
 
 /* imagen primera seccion */
@@ -380,7 +391,7 @@ footer {
     align-items: center;
     gap: 10px;
 
-    margin-top: 15px;
+    
     padding: 12px 22px;
 
     background: linear-gradient(135deg, #E1306C, #C13584, #833AB4);
@@ -416,6 +427,7 @@ footer {
     /* pone los items en fila */
     gap: 10px;
     /* opcional, espacio entre botones */
+    margin-top: 15px;
 }
 
 
@@ -495,26 +507,6 @@ footer {
     margin-top: 15px;
     font-weight: 600;
 }
-.servicio-acciones {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 18px;
-}
-
-.link-secundario {
-    font-size: 0.95rem;
-    color: var(--gris);
-    text-decoration: underline;
-}
-
-.link-secundario:hover {
-    color: var(--verde-principal);
-}
-
-.btn-link {
-    font-weight: 600;
-}
 
 .tituloSectionProceso{
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
@@ -574,6 +566,102 @@ footer {
     max-width: 320px; /* evita que crezcan demasiado */
 }
 
+
+@media (max-width: 768px) {
+
+    /* =====================
+       SECCIÓN SERVICIOS
+       ===================== */
+
+    .servicios {
+        padding: 50px 5%;
+    }
+
+    .lista-servicios {
+        gap: 25px;
+        margin-top: 35px;
+    }
+
+    .servicio {
+        flex-direction: column; /* imagen arriba, texto abajo */
+        gap: 0;
+    }
+
+    .servicio-img {
+        width: 100%;
+        height: 220px;
+        flex: none;
+    }
+
+    .servicio-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .servicio-info {
+        padding: 22px 18px;
+        text-align: center;
+    }
+
+    .servicio-info h3 {
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+    }
+
+    .servicio-info p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+    }
+
+    .servicio-info .btn-link {
+        margin-top: 12px;
+    }
+
+    /* =====================
+       PROCESO DE ADAPTACIÓN
+       ===================== */
+
+    .proceso-adaptacion {
+        padding: 50px 5%;
+        gap: 30px;
+    }
+
+    .tituloSectionProceso {
+        font-size: 2.1rem;
+    }
+
+    .lista-proceso {
+        flex-direction: column;
+        gap: 22px;
+        align-items: center;
+    }
+
+    .card-proceso {
+        max-width: 100%;
+        width: 100%;
+        padding: 20px 16px;
+        text-align: center;
+    }
+
+    .icono-card img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .contenido-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .contenido-card p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .paso {
+        font-size: 0.95rem;
+    }
+}
 /* =========================
    SECCIÓN LISTA DE PRECIOS
    ========================= */
@@ -640,18 +728,24 @@ footer {
 }
 
 @media (max-width: 768px) {
+
     .section-precios {
         padding: 40px 5%;
     }
 
     .precios-card {
         padding: 30px 20px;
+        overflow: hidden; /* seguridad extra */
     }
 
     .btn-precios {
         width: 100%;
+        max-width: 100%;
+        box-sizing: border-box; /* CLAVE */
         justify-content: center;
+        padding: 14px 20px; /* reducimos laterales */
     }
+
 }
 
 
@@ -883,89 +977,124 @@ footer {
     }
 
 }
+/*NAVBAR*/
 
-/** navbar cool **/
-/* MEDIA QUERY PARA TABLET Y MOBILE */
 @media (max-width: 768px) {
+
     .navbar {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
+        padding: 12px 16px;
         background: linear-gradient(135deg, #f6f3ee, #e8f5e9);
     }
 
-    .navbar a {
-        font-size: 1rem;
-        text-align: center;
-        padding: 12px 25px;
-        width: 200px;
-        background: linear-gradient(135deg, #1fbd19, #5dc566);
-        color: rgb(247, 246, 246);
-        border-radius: 30px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: all 0.3s ease;
-
+    /* BARRA SUPERIOR */
+    .menu-header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 12px;
     }
 
-    .navbar a:hover {
-        transform: translateY(-2px) scale(1.03);
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .menu-toggle span {
+        width: 26px;
+        height: 3px;
+        background: #1fbd19;
+        border-radius: 2px;
+    }
+
+    .menu-text {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #1fbd19;
+    }
+
+    /* MENÚ DESPLEGABLE HACIA ABAJO */
+    .menu-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding-top: 20px;
+        width: 100%;
+    }
+
+    .menu-links a {
+        width: 200px;
+        text-align: center;
+        padding: 12px 25px;
+        background: linear-gradient(135deg, #1fbd19, #5dc566);
+        color: white;
+        border-radius: 30px;
+        font-size: 1rem;
+    }
+
+    /* ABIERTO */
+    .navbar.open .menu-links {
+        display: flex;
+    }
+
+    /* LIMPIEZA MOBILE */
+    .menu-links a:hover {
+        transform: none;
+    }
+
+    .menu-links a::after {
+        display: none;
     }
 }
 
-
-
 /* SOLO PARA MOBILE */
-/* =========================
-   BOTONES WP & IG SOLO ICONO - MOBILE
-   ========================= */
 @media (max-width: 768px) {
 
-    /* Centrar la lista de botones en la misma fila */
+    /* CONTENEDOR */
     .lista-contacto {
         display: flex;
-        /* fila */
         justify-content: center;
-        /* centra horizontalmente */
+        align-items: center; /* MISMA ALTURA */
         gap: 15px;
-        /* separación entre iconos */
-        padding: 10px 0;
+        padding: 12px 0;
     }
 
-    /* Ajustar botones para que solo se vea el ícono */
+    /* BOTONES */
     .btn-mob-change,
     .btn-ig {
-        padding: 10px;
-        /* ajusta tamaño */
         width: 50px;
-        /* cuadrado fijo */
         height: 50px;
-        /* cuadrado fijo */
+        padding: 0;
+        margin: 0;              /* CLAVE */
         border-radius: 50%;
-        /* círculo */
-        font-size: 0;
-        /* oculta el texto */
-        gap: 0;
-        /* elimina espacio entre icono y texto */
+
+        display: flex;          /* CLAVE */
+        align-items: center;    /* CLAVE */
         justify-content: center;
+
+        line-height: 1;         /* CLAVE */
+        font-size: 0;
+        vertical-align: middle;/* EXTRA SEGURIDAD */
     }
 
-    /* Mantener ícono visible */
+    /* ICONOS */
     .btn-mob-change i,
     .btn-ig i {
         font-size: 24px;
-        /* tamaño del ícono */
-        font-weight: normal;
-        color: white;
-        /* mantiene color legible */
+        line-height: 1;         /* CLAVE */
+        display: block;         /* evita baseline raro */
     }
 
-    /* Hover cool */
-    .btn-mob-change:hover,
-    .btn-ig:hover {
-        transform: translateY(-3px) scale(1.1);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    /* FEEDBACK TÁCTIL */
+    .btn-mob-change:active,
+    .btn-ig:active {
+        transform: scale(0.92);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
     }
 }
