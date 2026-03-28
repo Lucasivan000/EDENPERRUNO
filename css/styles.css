@@ -80,72 +80,20 @@ header {
 .hero-content {
     position: relative;
     z-index: 2;
+    background: rgba(255, 255, 255, 0.35);
+    padding: 20px 30px;
+    border-radius: 12px;
+    backdrop-filter: blur(4px);
 }
 
 .hero h1 {
     font-size: 3rem;
     color: var(--verde);
     margin-bottom: 10px;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
+     font-weight: 700;
 }
 
-
-/* SECTION EESCUELA */
-.sectionEscuelitaClases {
-    padding: 80px 10%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    position: relative;
-    /* 👈 CLAVE */
-    overflow: hidden;
-    /* 👈 CLAVE */
-    background: linear-gradient(135deg, #f6f3ee, #e8f5e9);
-}
-
-.fondoDecorado::before {
-    content: "";
-    position: absolute;
-    top: -150px;
-    right: -150px;
-    width: 500px;
-    height: 500px;
-    background: var(--verde-claro);
-    border-radius: 50%;
-
-    opacity: 0.4;
-    filter: blur(80px);
-}
-
-.fondoDecorado::after {
-    content: "";
-    position: absolute;
-    bottom: -100px;
-    left: -100px;
-    width: 500px;
-    height: 500px;
-    background: var(--verde);
-    border-radius: 50%;
-
-    opacity: 0.3;
-    filter: blur(80px);
-}
-
-
-/* Solo para esta imagen */
-.imagen-ovalada {
-    max-width: 650px;
-    /* tamaño deseado */
-    width: 100%;
-    /* se adapta al contenedor */
-    height: 650px;
-    border-radius: 50% / 35%;
-    /* forma de óvalo horizontal */
-    overflow: hidden;
-    /* evita que sobresalga la imagen */
-    display: flex;
-    justify-content: center;
-}
 
 /* CONTACTO Y REQUISITOS */
 .contacto {
@@ -273,11 +221,13 @@ p {
 }
 
 .section {
-    padding: 80px 10%;
+    padding: 80px 10%; /* Desktop */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
+    gap: 230px;
+    flex-wrap: wrap; /* Muy importante para que en móviles no se rompa */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.425) 80%, #d5dfd2 100%);
 }
 
 .section:nth-child(even) {
@@ -285,32 +235,66 @@ p {
 }
 
 .texto {
-    flex: 1;
+    flex: 1 1 500px; /* Ocupa espacio flexible pero no demasiado pequeño */
 }
 
+.texto h2.tituloSection {
+    font-size: clamp(2rem, 4vw, 3rem); /* grande y adaptable */
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: left; /* centrado solo si querés */
+    color: #2a2a2a; /* un gris oscuro legible */
+}
 
+.texto p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #444; /* contraste suave con el título */
+}
+
+/* imagen primera seccion */
 
 .imagen {
-    flex: 1;
+    flex: 1 1 400px; /* Ocupa espacio flexible */
     display: flex;
     justify-content: center;
 }
 
 .imagen img {
     width: 100%;
-    max-width: 500px;
-    border-radius: 30px;
-    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+    max-width: 450px; /* Evita que crezca demasiado */
+    height: auto;
+    border-radius: 15px; /* opcional: suaviza la imagen */
+    object-fit: cover;
 }
 
-.circulo img {
-    border-radius: 50%;
-    clip-path: none;
+/*seccion primera MOBILE */
+@media (max-width: 768px) {
+    .section {
+        padding: 60px 5%;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .texto, .imagen {
+        text-align: center; /* centrar contenido en móvil */
+    }
+
+    .texto h2.tituloSection {
+        font-size: 2rem;
+    }
+
+    .texto p {
+        font-size: 1rem;
+    }
+
+    .imagen img {
+        max-width: 100%;
+    }
 }
 
-.triangulo img {
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-}
+/* */
 
 .pasos div {
     background: white;
@@ -328,41 +312,43 @@ footer {
 }
 
 
-/* BOTON DE WP */
+/* BOTÓN WHATSAPP */
 .btn-wp {
     display: inline-flex;
     align-items: center;
     gap: 10px;
 
-    margin-top: 15px;
-    padding: 12px 22px;
+    margin-top: 30px; /* más aire respecto al h1 */
+    padding: 12px 26px;
 
-    background: linear-gradient(135deg, #25D366, #1ebe5d);
-    color: white;
+    background: linear-gradient(135deg, #25d366, #1fae58);
+    color: #fff;
 
-    border-radius: 40px;
+    border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
 
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* icono */
+/* Icono */
 .btn-wp i {
-    font-size: 20px;
+    font-size: 18px;
 }
 
-/* hover */
+/* Hover suave */
 .btn-wp:hover {
-    transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
 }
 
-/* click */
+/* Active */
 .btn-wp:active {
-    transform: scale(0.97);
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
 }
 
 /* ENLACE INTERNO */
@@ -433,8 +419,182 @@ footer {
 }
 
 
+/* seccion servicios */
+
+.servicios {
+    display: block;
+    padding: 80px 10%;
+    
+}
+.servicios-contenido {
+    margin-top: 40px;
+}
+
+.lista-servicios {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    margin-top: 50px;
+}
+
+/* CARD */
+.servicio {
+    display: flex;
+    gap: 30px;
+    background: #fff;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(39, 97, 24, 0.692);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servicio:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+}
+
+/* IMAGEN */
+.servicio-img {
+    flex: 0 0 320px;
+    box-shadow: 0 10px 30px rgba(7, 7, 7, 0.692);
+}
+
+.servicio-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* INFO */
+.servicio-info {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.servicio-info h3 {
+    color: var(--verde);
+    font-size: 2.2rem;      /* más grande que el texto */
+    font-weight: 700;       /* más marcado */
+    margin-bottom: 12px;
+    text-transform: capitalize;  /* hace que la primera letra de cada palabra sea mayúscula */
+    letter-spacing: 1px;        /* un poco de espacio entre letras */
+    line-height: 1.3;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* sutil sombra para darle “profundidad” */
+}
+
+.servicio-info p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: var(--gris);
+    max-width: 1000px;
+}
+
+.servicio-info .btn-link {
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.tituloSectionProceso{
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    font-size: 3rem;
+
+}
+
+.proceso-adaptacion {
+    padding: 80px 10%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.425) 80%, #d5dfd2 100%);
+    text-align: center;
+
+    display: flex;
+    flex-direction: column; /* ahora todo se apila verticalmente */
+    align-items: center;    /* centra el h2 y las cards */
+    gap: 40px;              /* espacio entre h2 y cards */
+}
+
+.icono-card img {
+    width: 80px;
+    height: 80px;
+}
+
+.contenido-card h3{
+    font-size: 2.0rem;
+}
+.contenido-card p{
+    font-size: 1.2rem;
+}
+
+.paso {
+    font-weight: 700;
+    color: #4a90e2; /* color destacado */
+    margin-bottom: 10px;
+    display: block;
+}
+
+.lista-proceso {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch; /* estira todas las cards al mismo alto */
+    width: 100%; /* ocupa todo el ancho disponible */
+    max-width: 1024px; /* opcional, para no exceder la pantalla */
+}
+
+.card-proceso {
+    background: #fff;
+    padding: 25px 20px;
+    border-radius: 22px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    flex: 1; /* todas ocupan el mismo ancho disponible */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 320px; /* evita que crezcan demasiado */
+}
+
+/* RESPONSIVE: COLUMNAS EN MÓVIL */
+
+@media (max-width: 1024px) {
+    .proceso-adaptacion {
+        padding: 50px 5%;
+    }
+
+    .lista-proceso {
+        flex-direction: column; /* cards apiladas */
+        align-items: center;    /* centradas */
+        gap: 25px;              /* espacio entre cards */
+        width: 100%;
+    }
+
+    .card-proceso {
+        max-width: 500px;       /* ancho máximo razonable */
+        width: 100%;            /* ocupa todo el ancho del contenedor */
+        padding: 20px 15px;     /* más compacto en móvil */
+        text-align: center;     /* centra el contenido */
+    }
+
+    .card-proceso h3 {
+        font-size: 1.2rem;
+    }
+
+    .card-proceso p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .proceso-adaptacion h2 {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}
+
+/* mobileee */
+
 /** MEDIA QUERIES PARA MOBILY TABLET **/
-/* TABLET */
+
 /*HERO*/
 @media (max-width: 768px) {
 
@@ -511,9 +671,6 @@ footer {
     }
 
 }
-
-/* MOBILE */
-
 /* hero */
 @media (max-width: 768px) {
 
@@ -657,50 +814,7 @@ footer {
     }
 }
 
-/* ADAPTACIÓN ESPECÍFICA PARA LA SECCIÓN ESCUELITA */
-@media (max-width: 768px) {
 
-
-    .sectionEscuelitaClases {
-        display: flex !important;
-        /* fuerza flex */
-        flex-direction: column !important;
-        /* apila elementos verticalmente */
-        gap: 25px;
-        align-items: center;
-        /* centra horizontalmente */
-        padding: 20px 10px;
-        /* opcional, margen interno */
-    }
-
-    /* Imagen primero */
-    .sectionEscuelitaClases .imagen-ovalada {
-        order: 1;
-        /* imagen arriba */
-        width: 100%;
-        max-width: 500px;
-        /* tamaño máximo */
-        margin: 0 auto;
-        /* centrado horizontal */
-    }
-
-    /* Texto después de la imagen */
-    .sectionEscuelitaClases .texto {
-        order: 2;
-        /* texto abajo */
-        width: 100%;
-        /* ocupa todo el ancho */
-    }
-
-    /* Imagen dentro del contenedor */
-    .sectionEscuelitaClases .imagen-ovalada img {
-        width: 100%;
-        height: auto;
-        border-radius: 50% / 35%;
-        /* mantiene óvalo */
-        display: block;
-    }
-}
 
 /* SOLO PARA MOBILE */
 /* =========================
@@ -752,77 +866,5 @@ footer {
     .btn-ig:hover {
         transform: translateY(-3px) scale(1.1);
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-    }
-}
-
-/** arreglo de bug **/
-/* =========================
-   SOLUCIÓN LINK ESCUELITA MOBILE
-   ========================= */
-/* =========================
-   LINK ESCUELITA MOBILE - CORRECCIÓN DEFINITIVA
-   ========================= */
-@media (max-width: 768px) {
-
-    /* La sección debe permitir clicks y que el contenido esté arriba */
-    .sectionEscuelitaClases {
-        overflow: visible !important; /* elimina el recorte */
-        position: relative;           /* para controlar z-index interno */
-    }
-
-    /* Texto por encima de los fondos decorativos */
-    .sectionEscuelitaClases .texto {
-        position: relative;
-        z-index: 2; /* asegura que los enlaces sean clickeables */
-    }
-
-    /* Los pseudo-elementos de fondo detrás */
-    .sectionEscuelitaClases.fondoDecorado::before,
-    .sectionEscuelitaClases.fondoDecorado::after {
-        position: absolute;
-        z-index: 0; /* fondo detrás de todo */
-        pointer-events: none; /* ⚡ clave: no bloquean clicks */
-    }
-}
-
-
-/* =========================
-   EVITAR SCROLL HORIZONTAL - MOBILE
-   ========================= */
-@media (max-width: 768px) {
-
-    body {
-        overflow-x: hidden;
-    }
-
-    /* Sección escuelita y clases */
-    .sectionEscuelitaClases {
-        padding: 20px 10px !important; /* quitar padding % grande */
-        flex-direction: column !important;
-        align-items: center;
-        gap: 20px;
-        width: 100vw; /* asegurar que no pase el ancho del viewport */
-        box-sizing: border-box;
-        overflow: hidden; /* bloquea contenido que sobresalga */
-    }
-
-    /* Imagen ovalada */
-    .sectionEscuelitaClases .imagen-ovalada,
-    .sectionEscuelitaClases .imagen {
-        max-width: 100%; /* que no exceda el contenedor */
-        width: 100%;
-        height: auto;
-        margin: 0 auto;
-    }
-
-    /* Pseudo-elementos decorativos */
-    .sectionEscuelitaClases.fondoDecorado::before,
-    .sectionEscuelitaClases.fondoDecorado::after {
-        width: 200px;
-        height: 200px;
-        top: -50px;
-        right: -50px;
-        bottom: -50px;
-        left: -50px;
     }
 }

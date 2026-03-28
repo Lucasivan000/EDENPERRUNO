@@ -17,24 +17,24 @@
     <header>
 
         <div class="banner">
-            <img 
-                src="./assets/bannerprincipaldos.png"
+            <img src="./assets/bannerprincipaldos.png"
                 srcset="./assets/bannermobile.png 768w, ./assets/bannerprincipaldos.png 1200w"
-                sizes="(max-width: 768px) 100vw, 1200px" 
-                alt="Banner principal">
+                sizes="(max-width: 768px) 100vw, 1200px" alt="Banner principal">
         </div>
 
         <nav class="navbar">
-            <a href="#escuela">Escuelita</a>
-            <a href="#guarderia">Guardería</a>
+            <a href="#inicio">Inicio</a>
+            <a href="#escuelita">Escuelita</a>
+            <a href="#hospedaje">Guarderia</a>
             <a href="#clases">Clases</a>
+            <a href="#adaptacion">Proceso de adaptacion</a>
             <a href="#contacto">Contacto</a>
         </nav>
 
     </header>
 
     <!-- HERO -->
-    <section class="hero" id="inicio">
+    <section class="hero" id="hero">
 
         <div class="hero-content">
             <h1>Educación, hospedaje y bienestar para tu perro</h1>
@@ -51,7 +51,7 @@
     </section>
 
     <!-- SOBRE -->
-    <section class="section" id="sobre">
+    <section class="section" id="inicio">
         <div class="texto">
             <h2 class="tituloSection">Bienvenidos</h2>
             <p>Bienvenidos a <strong>Eden Perruno</strong> 🐶. Soy Matías, apasionado por el comportamiento canino y el
@@ -62,7 +62,7 @@
                 respeto, creando un espacio donde ellos pueden desarrollarse, socializar y disfrutar mientras sus dueños
                 confían en nuestra experiencia.</p>
 
-            <p>Mi objetivo es acompañar a cada familia y su perro, ofreciendo soluciones personalizadas y cercanas, con
+            <p>Mi objetivo es acompañar a cada tutor y su perro, ofreciendo soluciones personalizadas y cercanas, con
                 profesionalismo y mucha pasión por los animales.</p>
         </div>
 
@@ -70,110 +70,121 @@
             <img src="./assets/imagenuno.jpeg" alt="presentacion">
         </div>
     </section>
+    <section class="section servicios fondoDecorado" id="servicios">
+        <h2 class="tituloSection"></h2>
 
-    <!-- ESCUELITA -->
-    <section class="section sectionEscuelitaClases fondoDecorado" id="escuela">
-        <div class="texto">
-            <h2 class="tituloSection">Escuelita</h2>
+        <div class="lista-servicios">
 
-            <div class="destacado">
-                <p>En <strong>la Escuelita de Eden Perruno</strong> creemos que cada perro merece vivir un día pleno,
-                    seguro
-                    y lleno de estímulos positivos. Nuestro servicio incluye la recolección en domicilio y traslado al
-                    predio, donde los perros disfrutan de un entorno controlado diseñado para su bienestar.</p>
-
-                <p>Durante su estadía, los perros socializan y juegan en contacto con otros compañeros caninos,
-                    desarrollando habilidades sociales y físicas mientras realizan actividades que fomentan su felicidad
-                    y
-                    equilibrio emocional. Todo esto ocurre bajo supervisión constante, garantizando que cada jornada sea
-                    segura, enriquecedora y de la más alta calidad.</p>
-            </div>
-
-            <div class="card-info">
-                <h3>Proceso de adaptación obligatorio</h3>
-
-                <div class="pasos">
-                    <div><strong>1° Etapa:</strong> Encuentro inicial de 20 minutos con el tutor presente <span>(sin
-                            costo)</span></div>
-                    <div><strong>2° Etapa:</strong> Permanencia de 2 horas sin el tutor <span>($15.000)</span></div>
-                    <div><strong>3° Etapa:</strong> Jornada completa + adaptación al traslado <span>($20.000)</span>
-                    </div>
+            <!-- ESCUELITA -->
+            <article class="servicio" id="escuelita">
+                <div class="servicio-img">
+                    <img src="./assets/imagenEscuelita.jpeg" alt="Escuelita canina">
                 </div>
 
-                <p class="nota">
-                    La duración del proceso puede variar según cada perro. Nuestro objetivo es respetar sus tiempos
-                    para lograr una adaptación segura y positiva.
-                </p>
-            </div>
+                <div class="servicio-info">
+                    <h3>Escuelita</h3>
+                    <p>
+                        Jornadas pensadas para que tu perro socialice, juegue y se eduque
+                        en un entorno seguro, con supervisión constante y actividades
+                        adaptadas a su bienestar.
+                    </p>
 
-            <div class="precio-box">
-                <h3>Valor de la Escuelita</h3>
-                <p>$35.000 por día <span>(traslado incluido)</p>
+                    <a href="#adaptacion" class="btn-link">
+                        Requiere proceso de adaptación
+                    </a>
+                </div>
+            </article>
 
-            </div>
+            <!-- HOSPEDAJE -->
+            <article class="servicio" id="hospedaje">
+                <div class="servicio-img">
+                    <img src="./assets/imagentres.jpeg" alt="Hospedaje canino">
+                </div>
 
-            <div class="card-info">
-                <h3>Requisitos previos</h3>
-                <p>
-                    <a href="#requisitos" class="btn-link">Ver requisitos</a>
-                </p>
-            </div>
+                <div class="servicio-info">
+                    <h3>Guarderia</h3>
+                    <p>
+                        Un espacio cómodo y cuidado donde tu perro permanece acompañado
+                        las 24 horas, recibiendo atención personalizada, seguridad
+                        y contención durante su estadía.
+                    </p>
+
+                    <a href="#adaptacion" class="btn-link">
+                        Requiere proceso de adaptación
+                    </a>
+                </div>
+            </article>
+
+            <!-- CLASES -->
+            <article class="servicio" id="clases">
+                <div class="servicio-img">
+                    <img src="./assets/imagencuatro.jpeg" alt="Clases personalizadas">
+                </div>
+
+                <div class="servicio-info">
+                    <h3>Clases personalizadas</h3>
+                    <p>
+                        Entrenamientos individuales enfocados en mejorar conductas,
+                        reforzar aprendizajes y fortalecer el vínculo entre el perro
+                        y su tutor.
+                    </p>
+                </div>
+            </article>
+
         </div>
+    </section>
 
-        <div class=" imagen-ovalada">
-            <img src="./assets/imagenEscuelita.jpeg" alt="Escuelita canina">
+    <!--Etapas de adaptacion-->
+    <!-- PROCESO DE ADAPTACIÓN -->
+    <section class="section proceso-adaptacion" id="adaptacion">
+        <h2 class="tituloSectionProceso">Proceso de Adaptación</h2>
+
+        <div class="lista-proceso">
+            <!-- Primera Etapa -->
+            <div class="card-proceso">
+                <div class="icono-card">
+                    <!-- Aquí va el ícono, por ejemplo de FontAwesome o imagen -->
+                    <img src="./assets/iconoReunion.png" alt="Icono Reunión">
+                </div>
+                <div class="contenido-card">
+                    <span class="paso">Paso 1</span>
+                    <h3 class="titulo-card">Reunión inicial</h3>
+                    <p>Nos reunimos con vos y tu perro para conocernos, entender sus necesidades y comenzar a generar
+                        confianza.</p>
+                </div>
+            </div>
+
+            <!-- Segunda Etapa -->
+            <div class="card-proceso">
+                <div class="icono-card">
+                    <img src="./assets/iconoVinculo.png" alt="Icono Vínculo">
+                </div>
+                <div class="contenido-card">
+                    <span class="paso">Paso 2</span>
+                    <h3 class="titulo-card">Vínculo inicial</h3>
+                    <p>Pasamos dos horas a solas con tu perro, creando un vínculo seguro y divertido que sentará las
+                        bases para su adaptación.</p>
+                </div>
+            </div>
+
+            <!-- Tercera Etapa -->
+            <div class="card-proceso">
+                <div class="icono-card">
+                    <img src="./assets/iconoTodoElDia.png" alt="Icono Día completo">
+                </div>
+                <div class="contenido-card">
+                    <span class="paso">Paso 3</span>
+                    <h3 class="titulo-card">Día entero juntos</h3>
+                    <p>Finalmente, tu perro pasa todo el día con nosotros, experimentando nuestra rutina y reforzando la
+                        confianza y bienestar.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- GUARDERIA -->
-    <section class="section" id="guarderia">
-        <div class="texto">
-            <h2 class="tituloSection">Hospedaje / Guardería</h2>
-            <p>En <strong>Eden Perruno</strong>, ofrecemos un espacio seguro y confortable donde tu perro es cuidado y
-                acompañado durante el tiempo que necesite, ya sea una estadía corta o prolongada. Cada momento está
-                supervisado por nuestro equipo, asegurando que tu mascota reciba atención constante, cariño y un entorno
-                estimulante.</p>
-
-            <p>Nuestra prioridad es el bienestar integral del perro: comodidad, seguridad, interacción positiva y
-                tranquilidad para los dueños, para que cada día sea enriquecedor y lleno de bienestar.</p>
-
-            <h3>Precio</h3>
-            <p>$40.000 por noche (incluye el día siguiente)</p>
-            <h3>Descargá nuestro PDF con toda la información necesaria.</h3>
-            <a href="docs/requisitos.pdf" download class="btn-link">📄 Descargar PDF</a>
-        </div>
 
 
 
-
-        <div class="imagen triangulo">
-            <img src="./assets/imagentres.jpeg" alt="guarderia">
-        </div>
-    </section>
-
-    <!-- CLASES -->
-    <section class="section sectionEscuelitaClases fondoDecorado" id="clases">
-        <div class="texto">
-            <h2 class="tituloSection">Clases Personalizadas</h2>
-            <p>En <strong>Eden Perruno</strong> ofrecemos clases personalizadas diseñadas para abordar las necesidades
-                únicas de cada perro y su tutor. Nos enfocamos en identificar las dificultades o comportamientos que
-                deseen corregir o reforzar, y desarrollamos un plan de entrenamiento adaptado a cada situación.</p>
-
-            <ul>
-                <li>Obediencia básica</li>
-                <li>Corrección de conductas</li>
-                <li>Socialización con otros perros</li>
-                <li>Trabajo específico según necesidades particulares</li>
-            </ul>
-
-            <p>Contactanos y contanos qué te gustaría lograr con tu perro; juntos encontraremos la mejor estrategia para
-                mejorar su comportamiento y fortalecer su vínculo con vos.</p>
-        </div>
-
-        <div class="imagen">
-            <img src="./assets/imagencuatro.jpeg" alt="clases">
-        </div>
-    </section>
 
 
     <!-- CONTACTO Y REQUISITOS -->
@@ -223,6 +234,7 @@
     <footer>
         <p>© 2026 Eden Perruno - Todos los derechos reservados</p>
     </footer>
+    <script src="./main.js"></script>
 
 </body>
 
