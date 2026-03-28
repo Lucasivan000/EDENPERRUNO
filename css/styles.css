@@ -324,10 +324,9 @@ p {
 
     .imagen img {
         width: 100%;
-        max-width: 100%;
-        height: min(42vh, 320px);   /* se adapta a todos los celulares */
-        object-fit: cover;          /* recorta solo lo necesario */
-        object-position: center;    /* recorte simétrico */
+        height: min(36vh, 280px);   /* MENOS ZOOM */
+        object-fit: cover;
+        object-position: center;
     }
 }
 
