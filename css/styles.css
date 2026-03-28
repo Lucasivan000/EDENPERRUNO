@@ -323,10 +323,11 @@ p {
     }
 
     .imagen img {
+        width: 100%;
         max-width: 100%;
-        width: 85%;
-        height: 350px;          
-        object-fit: cover;
+        height: min(42vh, 320px);   /* se adapta a todos los celulares */
+        object-fit: cover;          /* recorta solo lo necesario */
+        object-position: center;    /* recorte simétrico */
     }
 }
 
