@@ -221,12 +221,12 @@ p {
 }
 
 .section {
-    padding: 80px 10%; /* Desktop */
+    padding: 80px 10%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 230px;
-    flex-wrap: wrap; /* Muy importante para que en móviles no se rompa */
+    gap: clamp(40px, 8vw, 120px);
+    flex-wrap: wrap;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.425) 80%, #d5dfd2 100%);
 }
 
@@ -553,6 +553,87 @@ footer {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     max-width: 320px; /* evita que crezcan demasiado */
 }
+
+/* =========================
+   SECCIÓN LISTA DE PRECIOS
+   ========================= */
+
+.section-precios {
+    padding: 60px 10%;
+    background: linear-gradient(135deg, #f6f3ee, #ffffff);
+    display: flex;
+    justify-content: center;
+}
+
+.precios-card {
+    background: #fff;
+    border-radius: 24px;
+    padding: 40px 35px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.precios-card h2 {
+    margin-bottom: 15px;
+}
+
+.precios-card p {
+    margin-bottom: 25px;
+    font-size: 1.05rem;
+}
+
+/* BOTÓN DESCARGA */
+.btn-precios {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 14px 28px;
+    border-radius: 40px;
+
+    background: linear-gradient(135deg, var(--verde), var(--verde-claro));
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-precios i {
+    font-size: 18px;
+}
+
+.btn-precios:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+}
+
+.nota-precios {
+    display: block;
+    margin-top: 18px;
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .section-precios {
+        padding: 40px 5%;
+    }
+
+    .precios-card {
+        padding: 30px 20px;
+    }
+
+    .btn-precios {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
 
 /* RESPONSIVE: COLUMNAS EN MÓVIL */
 
