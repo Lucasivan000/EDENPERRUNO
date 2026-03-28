@@ -4,6 +4,10 @@
     --fondo: #f6f3ee;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 /* HEADER GENERAL */
 header {
     width: 100%;
@@ -329,7 +333,7 @@ footer {
     align-items: center;
     gap: 10px;
 
-    margin-top: 30px; /* más aire respecto al h1 */
+    
     padding: 12px 26px;
 
     background: linear-gradient(135deg, #25d366, #1fae58);
@@ -420,14 +424,22 @@ footer {
 
 .lista-contacto {
     list-style: none;
-    /* quita los puntos */
     padding: 0;
-    margin: 0;
+    margin: 15px 0 0 0;
+
     display: flex;
-    /* pone los items en fila */
-    gap: 10px;
-    /* opcional, espacio entre botones */
-    margin-top: 15px;
+    align-items: center;      /* 🔥 MISMA ALTURA VISUAL */
+    justify-content: center;  /* opcional, queda más prolijo */
+    gap: 15px;
+}
+.lista-contacto a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 52px;   /* 🔥 misma altura */
+    padding: 12px 22px;
+    line-height: 1;     /* evita desfases de texto */
 }
 
 
@@ -978,23 +990,23 @@ footer {
 
 }
 /*NAVBAR*/
-
 @media (max-width: 768px) {
 
+    /* NAVBAR BASE */
     .navbar {
-        padding: 12px 16px;
-        background: linear-gradient(135deg, #f6f3ee, #e8f5e9);
+        position: relative;
+        padding: 16px;
+        width: 100%;
     }
 
-    /* BARRA SUPERIOR */
+    /* HEADER: hamburguesa + texto */
     .menu-header {
-        width: 100%;
         display: flex;
         align-items: center;
-        justify-content: flex-start;
         gap: 12px;
     }
 
+    /* BOTÓN HAMBURGUESA */
     .menu-toggle {
         display: flex;
         flex-direction: column;
@@ -1003,6 +1015,7 @@ footer {
         border: none;
         cursor: pointer;
         padding: 10px;
+        z-index: 1001; /* SIEMPRE visible */
     }
 
     .menu-toggle span {
@@ -1012,38 +1025,53 @@ footer {
         border-radius: 2px;
     }
 
+    /* TEXTO MENU */
     .menu-text {
         font-size: 1rem;
         font-weight: 600;
         color: #1fbd19;
     }
 
-    /* MENÚ DESPLEGABLE HACIA ABAJO */
+    /* MENU CERRADO */
     .menu-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+
         display: none;
         flex-direction: column;
         align-items: center;
+
         gap: 15px;
-        padding-top: 20px;
-        width: 100%;
+        padding: 20px 0;
+
+        background: linear-gradient(135deg, #f6f3ee, #e8f5e9);
+        z-index: 1000;
     }
 
-    .menu-links a {
-        width: 200px;
-        text-align: center;
-        padding: 12px 25px;
-        background: linear-gradient(135deg, #1fbd19, #5dc566);
-        color: white;
-        border-radius: 30px;
-        font-size: 1rem;
-    }
-
-    /* ABIERTO */
+    /* MENU ABIERTO */
     .navbar.open .menu-links {
         display: flex;
     }
 
-    /* LIMPIEZA MOBILE */
+    /* LINKS */
+    .menu-links a {
+        width: 85%;
+        max-width: 320px;
+
+        text-align: center;
+        padding: 14px 0;
+
+        background: linear-gradient(135deg, #1fbd19, #5dc566);
+        color: white;
+
+        border-radius: 30px;
+        font-size: 1rem;
+        text-decoration: none;
+    }
+
+    /* DESACTIVAR HOVER MOBILE */
     .menu-links a:hover {
         transform: none;
     }
