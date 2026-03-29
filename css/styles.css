@@ -73,6 +73,7 @@ header {
 }
 
 /* 🔴 OCULTAR ELEMENTOS MOBILE EN DESKTOP */
+
 .menu-toggle {
     display: none;
 }
@@ -81,7 +82,6 @@ header {
     display: flex;
     gap: 40px;
 }
-
 /* HERO */
 
 .hero {
@@ -1058,109 +1058,25 @@ footer {
 }
 
 /*NAVBAR*/
-/* BOTÓN HAMBURGUESA siempre visible */
-.menu-toggle {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 102;
-    /* sobre todo */
-}
-
-/* HEADER: hamburguesa + texto */
-.navbar {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    /* separa hamburguesa y texto */
-    padding: 16px;
-    justify-content: flex-start;
-    width: 100%;
-}
-
-/* TEXTO AL LADO DE LA HAMBURGUESA */
-.menu-text {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #1fbd19;
-}
-
-/* MENU LINKS DESPLEGABLE */
-.menu-links {
-    position: absolute;
-    top: 100%;
-    /* justo debajo del navbar */
-    left: 0;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    /* ocupa todo el ancho disponible */
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-    background: linear-gradient(135deg, #f6f3ee, #e8f5e9);
-    z-index: 101;
-}
-
-/* MENU ABIERTO */
-.navbar.open .menu-links {
-    max-height: 500px;
-    /* ajusta según cantidad de links */
-    padding: 15px 0;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* LINKS */
-.menu-links a {
-    width: 100%;
-    text-align: center;
-    padding: 14px 0;
-    font-size: 1rem;
-    color: #fff;
-    text-decoration: none;
-
-    background: linear-gradient(135deg, #1fbd19, #5dc566);
-    border-radius: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-/* Quitar borde del primer link */
-.menu-links a:first-child {
-    border-top: none;
-}
-
-/* HOVER */
-.menu-links a:hover {
-    background-color: rgba(255, 255, 255, 0.18);
-    color: #1fbd19;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* ---------------- MOBILE ---------------- */
 @media (max-width: 768px) {
 
-    /* NAVBAR */
+    /* NAVBAR BASE */
     .navbar {
-        position: relative;
         display: flex;
-        align-items: center;
-        gap: 12px;             /* espacio entre hamburguesa y texto */
-        justify-content: flex-start;
-        padding: 16px;
+        position: relative;
+        
         width: 100%;
+        justify-content: flex-start;
+        gap: 12px;
+        align-items: center;
     }
 
-    /* TEXTO DEL MENU */
-    .menu-text {
-        font-size: 1rem;
-        font-weight: 600;
-        color: #1fbd19;
+    /* HEADER: hamburguesa + texto */
+    .menu-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
     }
 
     /* BOTÓN HAMBURGUESA */
@@ -1172,7 +1088,8 @@ footer {
         border: none;
         cursor: pointer;
         padding: 10px;
-        z-index: 102;
+        z-index: 1001;
+        /* SIEMPRE visible */
     }
 
     .menu-toggle span {
@@ -1182,54 +1099,60 @@ footer {
         border-radius: 2px;
     }
 
-    /* MENU LINKS DESPLEGABLE */
+    /* TEXTO MENU */
+    .menu-text {
+        display: block;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #1fbd19;
+
+    }
+
+    /* MENU CERRADO */
     .menu-links {
         position: absolute;
-        top: 100%;              /* debajo del navbar */
-        left: 50%;
-        transform: translateX(-50%); /* centro horizontal perfecto */
-        width: 100%;
-        max-width: 320px;
-        display: flex;
+        top: 100%;
+        width: auto;
+        display: none;
+        left: 0;
+        right: 0;
         flex-direction: column;
-        align-items: center;
-        gap: 12px;
+        align-items: stretch;
+        gap: 15px;
         padding: 0;
-        max-height: 0;          /* cerrado por defecto */
-        overflow: hidden;
-        transition: max-height 0.35s ease;
         background: linear-gradient(135deg, #f6f3ee, #e8f5e9);
-        z-index: 101;
+        z-index: 1000;
+
+        
+        
     }
 
     /* MENU ABIERTO */
     .navbar.open .menu-links {
-        max-height: 600px;      /* suficiente para todos los links */
-        padding: 20px 0;
+        display: flex;
+        max-height: 1000px;
     }
 
     /* LINKS */
     .menu-links a {
-        width: 90%;             /* ocupa casi todo el contenedor */
+        width: 100%;
+        max-width: 100%;
         text-align: center;
         padding: 14px 0;
-        font-size: 1rem;
-        color: white;
-        text-decoration: none;
-        border-radius: 30px;
         background: linear-gradient(135deg, #1fbd19, #5dc566);
+        color: white;
+        border-radius: 8px;
+        font-size: 1rem;
+        text-decoration: none;
     }
 
-    /* Quitar borde del primer link si quieres separación */
-    .menu-links a:first-child {
-        border-top: none;
-    }
-
-    /* HOVER */
+    /* DESACTIVAR HOVER MOBILE */
     .menu-links a:hover {
-        background-color: rgba(255, 255, 255, 0.18);
-        color: #1fbd19;
-        transition: background-color 0.3s ease, color 0.3s ease;
+        transform: none;
+    }
+
+    .menu-links a::after {
+        display: none;
     }
 }
 
