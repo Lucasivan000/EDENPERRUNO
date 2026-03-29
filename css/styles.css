@@ -15,6 +15,7 @@ header {
 }
 
 /* BANNER (LOGO GRANDE) */
+/* Desktop */
 .banner {
     width: 100%;
     height: 700px;
@@ -25,6 +26,21 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+}
+
+/* Tablet intermedia */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .banner {
+        height: 400px; /* ajusta altura intermedia */
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .banner {
+        height: 200px;
+    }
 }
 
 /* NAVBAR */
@@ -1045,7 +1061,7 @@ footer {
 
     /* Usamos la versión recortada específicamente para mobile */
     .banner img {
-        content: url('../assets/bannermobile.png');
+        
         width: 100%;
         height: 100%;
         object-fit: cover;
