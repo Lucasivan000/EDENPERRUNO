@@ -308,8 +308,8 @@ p {
     .texto,
     .imagen {
         text-align: center;
-        
-        
+
+
     }
 
     .texto h2.tituloSection {
@@ -319,12 +319,13 @@ p {
     .texto p {
         font-size: 1rem;
         margin-bottom: 6px;
-        
+
     }
 
     .imagen img {
         width: 100%;
-        height: min(36vh, 280px);   /* MENOS ZOOM */
+        height: min(36vh, 280px);
+        /* MENOS ZOOM */
         object-fit: cover;
         object-position: center;
     }
@@ -487,11 +488,15 @@ footer {
     gap: 35px;
     margin-top: 50px;
 }
+
 .servicio-acciones {
     display: flex;
-    flex-direction: column; /* uno debajo del otro */
-    gap: 12px;              /* espacio entre enlaces */
-    margin-top: 15px;       /* aire respecto al texto */
+    flex-direction: column;
+    /* uno debajo del otro */
+    gap: 12px;
+    /* espacio entre enlaces */
+    margin-top: 15px;
+    /* aire respecto al texto */
 }
 
 /* CARD */
@@ -581,7 +586,7 @@ footer {
 .icono-card img {
     width: 80px;
     height: 80px;
-    
+
 }
 
 .contenido-card h3 {
@@ -1060,6 +1065,8 @@ footer {
         position: relative;
         padding: 16px;
         width: 100%;
+        justify-content: flex-start;
+        gap: 50px;
     }
 
     /* HEADER: hamburguesa + texto */
@@ -1067,6 +1074,7 @@ footer {
         display: flex;
         align-items: center;
         gap: 12px;
+
     }
 
     /* BOTÓN HAMBURGUESA */
@@ -1102,8 +1110,10 @@ footer {
     .menu-links {
         position: absolute;
         top: 100%;
-        left: 0;
         width: 100%;
+        left: 50%;
+        /* cambiar de 0 a 50% */
+        transform: translateX(-50%);
 
         display: none;
         flex-direction: column;
@@ -1114,6 +1124,7 @@ footer {
 
         background: linear-gradient(135deg, #f6f3ee, #e8f5e9);
         z-index: 1000;
+        
     }
 
     /* MENU ABIERTO */
@@ -1196,6 +1207,7 @@ footer {
     }
 
     @media (max-width: 768px) {
+
         .btn-ig,
         .btn-mob-change {
             width: 50px;
@@ -1208,8 +1220,7 @@ footer {
             justify-content: center;
         }
 
-        .btn-ig i
-        .btn-mob-change i {
+        .btn-ig i .btn-mob-change i {
             font-size: 28px;
             line-height: 1;
         }
