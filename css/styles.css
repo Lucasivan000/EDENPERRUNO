@@ -40,7 +40,6 @@ header {
 @media (max-width: 768px) {
     .banner {
         height: 200px;
-        background-image: url('./assets/bannermobile.png');
     }
 }
 
