@@ -17,9 +17,13 @@
     <header>
 
         <div class="banner">
-            <img src="./assets/bannerprincipaldos.png"
-                srcset="./assets/bannermobile.png 768w, ./assets/bannerprincipaldos.png 1200w"
-                sizes="(max-width: 768px) 100vw, 1200px" alt="Banner principal">
+            <picture>
+                <!-- Imagen para pantallas hasta 768px -->
+                <source srcset="./assets/bannermobile.png" media="(max-width: 768px)">
+
+                <!-- Imagen por defecto (desktop) -->
+                <img src="./assets/bannerprincipaldos.png" alt="Banner principal">
+            </picture>
         </div>
 
         <nav class="navbar">
