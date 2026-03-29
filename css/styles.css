@@ -539,12 +539,12 @@ footer {
     color: var(--verde);
     font-size: 2.2rem;
     /* más grande que el texto */
-    font-weight: 700;
-    /* más marcado */
+    
+    
     margin-bottom: 12px;
     text-transform: capitalize;
     /* hace que la primera letra de cada palabra sea mayúscula */
-    letter-spacing: 1px;
+    
     /* un poco de espacio entre letras */
     line-height: 1.3;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
